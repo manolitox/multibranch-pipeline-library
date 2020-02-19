@@ -6,7 +6,7 @@ pipeline {
             steps {
                 parallel(
                   first: {
-                    sayHello("sin-parametro")
+                    sayHello("develop")
                     sleep 2
                   },
                   second: {
