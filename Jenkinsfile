@@ -1,12 +1,15 @@
 @Library('pipeline-shared-library') _
 pipeline {
-    agent any 
+    agent any
+    parameters {
+        string(name: 'Manu')
+    } 
     stages {
         stage('Paso 1') {
             steps {
                 parallel(
                   first: {
-                    sayHello("develop")
+                    sayHello(params.name)
                     sleep 2
                   },
                   second: {
